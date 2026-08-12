@@ -1,0 +1,74 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-blue: #06c;
+  --header-height: 70px;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+}
+
+.header {
+  height: var(--header-height);
+  display: flex;
+  align-items: center; /* Vertically centers the content */
+  padding: 0 20px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 30px; /* Adjust based on your mockup proportions */
+}
+
+/* Navigation list */
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  text-transform: uppercase; /* Requirement: Uppercase via CSS, not HTML */
+  font-size: 14px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: var(--header-height); /* Ensures pseudo-element lines up properly with header height */
+}
+
+/* Pseudo-element for the active link blue line */
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--primary-blue); /* Requirement: CSS variable for blue color */
+}
+
+.nav-link:hover {
+  color: var(--primary-blue);
+}
