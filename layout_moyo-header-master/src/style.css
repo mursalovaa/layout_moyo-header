@@ -16,10 +16,9 @@ body {
 }
 
 .header {
-  height: var(--header-height);
   display: flex;
   align-items: center; /* Vertically centers the content */
-  padding: 0 20px;
+  width: 100%;
   border-bottom: 1px solid #eaeaea;
 }
 
@@ -43,7 +42,10 @@ body {
 .nav-list {
   display: flex;
   list-style: none;
-  gap: 30px;
+  }
+
+.nav-item:not(:last-child) {
+  margin-right: 30px;
 }
 
 .nav-link {
@@ -55,18 +57,23 @@ body {
   position: relative;
   display: flex;
   align-items: center;
-  height: var(--header-height); /* Ensures pseudo-element lines up properly with header height */
+  padding: 0;
+  height: var(
+    --header-height
+  ); /* Ensures pseudo-element lines up properly with header height */
 }
 
 /* Pseudo-element for the active link blue line */
-.nav-link.active::after {
-  content: "";
+.nav-link.is-active::after {
+  content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 4px;
-  background-color: var(--primary-blue); /* Requirement: CSS variable for blue color */
+  background-color: var(
+    --primary-blue
+  ); /* Requirement: CSS variable for blue color */
 }
 
 .nav-link:hover {
