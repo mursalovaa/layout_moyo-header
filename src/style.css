@@ -1,11 +1,11 @@
 :root {
-  --primary-blue: #00b0ff;
+  --primary-blue: #00acdc;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+body,
+body::before,
+body::after {
+  box-sizing: inherit;
   margin: 0;
   padding: 0;
 }
@@ -55,7 +55,7 @@ header {
 
 /* Відступи між пунктами через margin, без відступів перед першим і після останнього */
 .nav-item:not(:last-child) {
-  margin-right: 24px;
+  margin-right: 20px;
 }
 
 /* Лінки */
@@ -68,7 +68,7 @@ header {
   font-family: Roboto, sans-serif;
   font-size: 12px;
   font-weight: 500; /* обов'язково: Roboto 500 */
-  color: #333;
+  color: #000;
   text-decoration: none;
   text-transform: uppercase;
   white-space: nowrap;
